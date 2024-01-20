@@ -1,18 +1,25 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
-jobs:
-  Explore-GitHub-Actions:
+name: Build Test
+env:
+  VERCEL_PROJECT_ID: prj_WK0aZeLgvJ5YRzjeKnF3HsNfOFk7
+on:
+  pull_request:
+    branches:
+      - main
+      - development
+      jobs:
+  Deploy-Preview:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: actions/checkout@v2
+
+      - name: Install CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull Environments
+        run: vercel pull --yes --environment=preview --token=MZ2KxEYnGCm3lIwS8ZEodEwf
+
+      - name: Build
+        run: vercel build --token=MZ2KxEYnGCm3lIwS8ZEodEwf
+
+      - name: Deploy
+        run: vercel deploy --prebuilt --token=MZ2KxEYnGCm3lIwS8ZEodEwf
