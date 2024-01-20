@@ -6,7 +6,8 @@ on:
     branches:
       - main
       - development
-      jobs:
+
+jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
     steps:
