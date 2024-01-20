@@ -1,6 +1,5 @@
 name: Build Test
-env:
-  VERCEL_PROJECT_ID: prj_WK0aZeLgvJ5YRzjeKnF3HsNfOFk7
+
 on:
   pull_request:
     branches:
