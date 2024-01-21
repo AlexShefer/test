@@ -10,11 +10,7 @@
     "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
     "preview": "vite preview"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run format"
-    }
-  },
+
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
