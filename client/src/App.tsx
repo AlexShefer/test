@@ -24,6 +24,7 @@ function App() {
 					veniam, placeat nulla quod id odio maiores. Maiores quasi possimus
 					amet quas ratione neque sunt et.
 				</p>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis aut minus, sapiente harum id ad qui cumque quas officia veniam quam voluptas modi nisi nostrum natus sequi magnam quod numquam!</p>
 			</div>
 			<h1>Vite + React = Development</h1>
 			<h2>New branch added</h2>
